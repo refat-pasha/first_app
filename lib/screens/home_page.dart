@@ -7,7 +7,7 @@ void main() {
 }
 
 class TapGameApp extends StatelessWidget {
-  const TapGameApp({Key? key}) : super(key: key);
+  const TapGameApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -84,7 +84,7 @@ class _HomePageState extends State<HomePage> {
 }
 
 class GamePage extends StatefulWidget {
-  const GamePage({Key? key}) : super(key: key);
+  const GamePage({super.key});
 
   @override
   State<GamePage> createState() => _GamePageState();
