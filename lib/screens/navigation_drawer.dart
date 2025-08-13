@@ -104,7 +104,27 @@ class navigation_drawer extends StatelessWidget {
       drawer: Drawer(
         child: ListView(
           children: [
-            
+            DrawerHeader(child: Text("refat")),
+            ListTile(
+              title: Text("home"),
+              leading: Icon(Icons.home),
+              onTap: MySnackBar("Home", context),
+            ),
+            ListTile(
+              title: Text("contact"),
+              leading: Icon(Icons.contacts),
+              onTap: MySnackBar("contacts", context),
+            ),
+            ListTile(
+              title: Text("profile"),
+              leading: Icon(Icons.person),
+              onTap: MySnackBar("person", context),
+            ),
+            ListTile(
+              title: Text("settings"),
+              leading: Icon(Icons.settings),
+              onTap: MySnackBar("settings", context),
+            ),
           ],
         ),
       ),
