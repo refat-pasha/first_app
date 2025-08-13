@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'bottom_nav_bar.dart';
+import 'navigation_end_drawer.dart';
 
 void main(List<String> args) {}
 
@@ -55,7 +56,13 @@ class navigation_drawer extends StatelessWidget {
           ),
           IconButton(
             onPressed: () {
-              MySnackBar("this is next page loading", context);
+              MySnackBar("going to navigation end drawer", context);
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const navigation_end_drawer(),
+                ),
+              );
             },
             icon: Icon(Icons.next_plan),
           ),
@@ -104,26 +111,48 @@ class navigation_drawer extends StatelessWidget {
       drawer: Drawer(
         child: ListView(
           children: [
-            DrawerHeader(child: Text("refat")),
+            DrawerHeader(
+              padding: EdgeInsets.all(0),
+              child: UserAccountsDrawerHeader(
+                decoration: BoxDecoration(color: Colors.indigo),
+                accountName: Text(
+                  "refat",
+                  style: TextStyle(color: Colors.black),
+                ),
+                accountEmail: Text(
+                  "refat@gmail.com",
+                  style: TextStyle(color: Colors.black),
+                ),
+                //currentAccountPicture: Image.network("https://www.pngfind.com/pngs/m/75-751525_luffy-roronoa-zoro-monkey-d-luffy-one-piece.png",),
+              ),
+            ),
             ListTile(
               title: Text("home"),
               leading: Icon(Icons.home),
-              onTap: MySnackBar("Home", context),
+              onTap: () {
+                MySnackBar("Home", context);
+              },
             ),
             ListTile(
               title: Text("contact"),
               leading: Icon(Icons.contacts),
-              onTap: MySnackBar("contacts", context),
+              onTap: () {
+                MySnackBar("contacts", context);
+              },
             ),
             ListTile(
               title: Text("profile"),
               leading: Icon(Icons.person),
-              onTap: MySnackBar("person", context),
+              onTap: () {
+                MySnackBar("person", context);
+              },
             ),
             ListTile(
               title: Text("settings"),
               leading: Icon(Icons.settings),
-              onTap: MySnackBar("settings", context),
+              onTap: () {
+                MySnackBar("settings", context);
+              },
             ),
           ],
         ),
