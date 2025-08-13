@@ -157,6 +157,19 @@ class navigation_drawer extends StatelessWidget {
           ],
         ),
       ),
+      body: Container(
+        alignment: Alignment.center,
+        margin: EdgeInsets.all(20),
+        decoration: BoxDecoration(
+          color: Colors.lime,
+          border: Border.all(color: Colors.black),
+          borderRadius: BorderRadius.circular(20),
+        ),
+        child: Text(
+          "this is navigation drawer page",
+          style: TextStyle(fontSize: 20, color: Colors.black),
+        ),
+      ),
     );
   }
 }

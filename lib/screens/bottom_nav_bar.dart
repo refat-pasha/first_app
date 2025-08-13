@@ -47,8 +47,11 @@ class bottom_nav_bar extends StatelessWidget {
           IconButton(
             onPressed: () {
               MySnackBar("going back to previous pages", context);
-              Navigator.push(context,
-              MaterialPageRoute(builder:  (context) => const floatingActionB()),
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const floatingActionB(),
+                ),
               );
             },
             icon: Icon(Icons.back_hand),
@@ -58,7 +61,9 @@ class bottom_nav_bar extends StatelessWidget {
               MySnackBar("going to  navigation drawer", context);
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const navigation_drawer()),
+                MaterialPageRoute(
+                  builder: (context) => const navigation_drawer(),
+                ),
               );
             },
             icon: const Icon(Icons.next_plan),
@@ -96,17 +101,27 @@ class bottom_nav_bar extends StatelessWidget {
           ;
           if (index == 0) {
             MySnackBar("Home tapped", context);
-          } 
-          else if (index == 1) {
+          } else if (index == 1) {
             MySnackBar("Search tapped", context);
-          } 
-          else if (index == 2) {
+          } else if (index == 2) {
             MySnackBar("Notifications tapped", context);
-          } 
-          else if (index == 3) {
+          } else if (index == 3) {
             MySnackBar("Profile tapped", context);
           }
         },
+      ),
+      body: Container(
+        alignment: Alignment.center,
+        margin: EdgeInsets.all(20),
+        decoration: BoxDecoration(
+          color: Colors.indigo,
+          border: Border.all(color: Colors.black),
+          borderRadius: BorderRadius.circular(20),
+        ),
+        child: Text(
+          "this is bottom navigation bar page",
+          style: TextStyle(fontSize: 20, color: Colors.black),
+        ),
       ),
     );
   }

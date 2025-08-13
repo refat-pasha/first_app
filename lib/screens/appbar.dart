@@ -63,6 +63,21 @@ class appbar extends StatelessWidget {
           ),
         ],
       ),
+      body: Container(
+        // height: 250,
+        // width: 250,
+        margin: EdgeInsets.all(20),
+        padding: EdgeInsets.all(20),
+        alignment: Alignment.center,
+        decoration: BoxDecoration(
+          color: Colors.green,
+          border: Border.all(color: Colors.black, width: 2),
+        ),
+        child: Text(
+          "This is appbar page",
+          style: TextStyle(fontSize: 20, color: Colors.black),
+        ),
+      ),
     );
   }
 }

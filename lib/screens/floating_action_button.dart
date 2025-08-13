@@ -74,6 +74,18 @@ class floatingActionB extends StatelessWidget {
           MySnackBar("Floating Action Button Pressed", context);
         },
       ),
+      body: Container(
+        margin: EdgeInsets.all(20),
+        decoration: BoxDecoration(
+          color: Colors.blue,
+          borderRadius: BorderRadius.circular(10),
+        ),
+        alignment: Alignment.center,
+        child: Text(
+          "this i s floating action button page",
+          style: TextStyle(fontSize: 20, color: Colors.amber),
+        ),
+      ),
     );
   }
 }
