@@ -66,7 +66,15 @@ class bottom_nav_bar extends StatelessWidget {
       ),
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: Colors.indigo,
-        items: [
+        currentIndex: 0, // make this stateful to update on tap
+        selectedItemColor: Colors.amber, // color for selected icon/label
+        unselectedItemColor:
+            Colors.white70, // color for unselected icons/labels
+        showUnselectedLabels: true, // optional
+        type:
+            BottomNavigationBarType
+                .fixed, // keeps all items visible and colored
+        items: const [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
           BottomNavigationBarItem(icon: Icon(Icons.search), label: 'Search'),
           BottomNavigationBarItem(
@@ -75,6 +83,21 @@ class bottom_nav_bar extends StatelessWidget {
           ),
           BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
         ],
+        onTap: (int index) {
+          ;
+          if (index == 0) {
+            MySnackBar("Home tapped", context);
+          } 
+          else if (index == 1) {
+            MySnackBar("Search tapped", context);
+          } 
+          else if (index == 2) {
+            MySnackBar("Notifications tapped", context);
+          } 
+          else if (index == 3) {
+            MySnackBar("Profile tapped", context);
+          }
+        },
       ),
     );
   }

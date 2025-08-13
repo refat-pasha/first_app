@@ -13,7 +13,9 @@ class MyFirstApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'My First Flutter App',
-      //theme: ThemeData.dark(),
+      theme: ThemeData(primaryColor: Colors.blue),
+      darkTheme: ThemeData(primaryColor: Colors.black),
+      color: Colors.cyanAccent,
       home: const appbar(),
       debugShowCheckedModeBanner: false,
     );
