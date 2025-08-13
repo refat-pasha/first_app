@@ -205,6 +205,20 @@ class navigation_end_drawer extends StatelessWidget {
           ],
         ),
       ),
+      body: Container(
+        margin: EdgeInsets.all(20),
+        alignment: Alignment.center,
+
+        decoration: BoxDecoration(
+          color: Colors.purple,
+          border: Border.all(color: Colors.black),
+        ),
+        child: Text(
+          "this is nagivagation end drawer page though it not working",
+          textAlign: TextAlign.center,
+          style: TextStyle(fontSize: 20, color: Colors.black),
+        ),
+      ),
     );
   }
 }
