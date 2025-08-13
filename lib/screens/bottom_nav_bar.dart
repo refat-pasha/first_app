@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'floating_action_button.dart';
 import 'navigation_drawer.dart';
 
 void main(List<String> args) {}
@@ -39,15 +40,18 @@ class bottom_nav_bar extends StatelessWidget {
           ),
           IconButton(
             onPressed: () {
-              MySnackBar("this is setting", context);
-            },
-            icon: Icon(Icons.settings),
-          ),
-          IconButton(
-            onPressed: () {
               MySnackBar("this is person", context);
             },
             icon: Icon(Icons.person),
+          ),
+          IconButton(
+            onPressed: () {
+              MySnackBar("going back to previous pages", context);
+              Navigator.push(context,
+              MaterialPageRoute(builder:  (context) => const floatingActionB()),
+              );
+            },
+            icon: Icon(Icons.back_hand),
           ),
           IconButton(
             onPressed: () {

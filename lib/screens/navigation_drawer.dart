@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'bottom_nav_bar.dart';
 
 void main(List<String> args) {}
 
@@ -16,7 +17,7 @@ class navigation_drawer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Things to learn(bottom navigation bar)"),
+        title: Text("Things to learn(navigation drawer)"),
         titleSpacing: 10,
         centerTitle: false,
         toolbarHeight: 60,
@@ -38,15 +39,19 @@ class navigation_drawer extends StatelessWidget {
           ),
           IconButton(
             onPressed: () {
-              MySnackBar("this is setting", context);
-            },
-            icon: Icon(Icons.settings),
-          ),
-          IconButton(
-            onPressed: () {
               MySnackBar("this is person", context);
             },
             icon: Icon(Icons.person),
+          ),
+          IconButton(
+            onPressed: () {
+              MySnackBar("going back to previous pages", context);
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const bottom_nav_bar()),
+              );
+            },
+            icon: Icon(Icons.back_hand),
           ),
           IconButton(
             onPressed: () {
@@ -96,7 +101,13 @@ class navigation_drawer extends StatelessWidget {
           }
         },
       ),
-      drawer: Drawer(),
+      drawer: Drawer(
+        child: ListView(
+          children: [
+            
+          ],
+        ),
+      ),
     );
   }
 }
