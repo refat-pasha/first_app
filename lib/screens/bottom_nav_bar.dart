@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'navigation_drawer.dart';
 
 void main(List<String> args) {}
 
@@ -50,9 +51,13 @@ class bottom_nav_bar extends StatelessWidget {
           ),
           IconButton(
             onPressed: () {
-              MySnackBar("this is next page loading", context);
+              MySnackBar("going to  navigation drawer", context);
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const navigation_drawer()),
+              );
             },
-            icon: Icon(Icons.next_plan),
+            icon: const Icon(Icons.next_plan),
           ),
         ],
       ),
