@@ -1,3 +1,4 @@
+import 'package:first_app/screens/alert_dialog.dart';
 import 'package:first_app/screens/body_row_column.dart';
 import 'package:flutter/material.dart';
 
@@ -84,7 +85,7 @@ class buttons extends StatelessWidget {
               MySnackBar("this is next page loading", context);
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const buttons()),
+                MaterialPageRoute(builder: (context) => const alart_dialog()),
               );
             },
             icon: Icon(Icons.next_plan),
