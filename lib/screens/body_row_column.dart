@@ -1,3 +1,4 @@
+import 'package:first_app/screens/buttons.dart';
 import 'package:flutter/material.dart';
 import 'navigation_end_drawer.dart';
 
@@ -61,7 +62,7 @@ class body_row extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => const navigation_end_drawer(),
+                  builder: (context) => const buttons(),
                 ),
               );
             },
