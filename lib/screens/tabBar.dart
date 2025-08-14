@@ -58,17 +58,44 @@ class tabBar extends StatelessWidget {
           bottom: TabBar(
             isScrollable: true,
             tabs: [
-              Tab(icon: Icon(Icons.menu_open)), // appbar() substitute
-              Tab(icon: Icon(Icons.add_circle)), // floatingActionB()
-              Tab(icon: Icon(Icons.space_bar)), // bottom_nav_bar() substitute
-              Tab(icon: Icon(Icons.menu)), // navigation_drawer()
-              Tab(icon: Icon(Icons.menu_open)), // navigation_end_drawer()
-              Tab(icon: Icon(Icons.view_week)), // body_row()
-              Tab(icon: Icon(Icons.radio_button_checked)), // buttons()
-              Tab(icon: Icon(Icons.warning_amber)), // alart_dialog()
-              Tab(icon: Icon(Icons.description)), // simple_form()
-              Tab(icon: Icon(Icons.view_list)), // ListViewPage()
-              Tab(icon: Icon(Icons.grid_view)), // GridViewPage()
+              Tab(icon: Icon(Icons.menu_open), text: "appbar"), // appbar()
+              Tab(
+                icon: Icon(Icons.add_circle),
+                text: "floatingActionB",
+              ), // floatingActionB()
+              Tab(
+                icon: Icon(Icons.space_bar),
+                text: "bottom_nav_bar",
+              ), // bottom_nav_bar()
+              Tab(
+                icon: Icon(Icons.menu),
+                text: "navigation_drawer",
+              ), // navigation_drawer()
+              Tab(
+                icon: Icon(Icons.menu_open),
+                text: "navigation_end_drawer",
+              ), // navigation_end_drawer()
+              Tab(icon: Icon(Icons.view_week), text: "body_row"), // body_row()
+              Tab(
+                icon: Icon(Icons.radio_button_checked),
+                text: "buttons",
+              ), // buttons()
+              Tab(
+                icon: Icon(Icons.warning_amber),
+                text: "alart_dialog",
+              ), // alart_dialog()
+              Tab(
+                icon: Icon(Icons.description),
+                text: "simple_form",
+              ), // simple_form()
+              Tab(
+                icon: Icon(Icons.view_list),
+                text: "ListViewPage",
+              ), // ListViewPage()
+              Tab(
+                icon: Icon(Icons.grid_view),
+                text: "GridViewPage",
+              ), // GridViewPage()
             ],
           ),
         ),
