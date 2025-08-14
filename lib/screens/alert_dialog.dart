@@ -1,4 +1,5 @@
 import 'package:first_app/screens/buttons.dart';
+import 'package:first_app/screens/simple_form.dart';
 import 'package:flutter/material.dart';
 
 class alart_dialog extends StatelessWidget {
@@ -17,6 +18,30 @@ class alart_dialog extends StatelessWidget {
                 Navigator.of(context).pop(); // close the dialog
               },
               child: Text("OK"),
+            ),
+          ],
+        );
+      },
+    );
+  }
+
+  NextPageAlartDialog(BuildContext context) {
+    return showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text("Next Page Alert!"),
+          content: Text("This will take you to the next page."),
+          actions: [
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop(); // close the dialog
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const simple_form()),
+                );
+              },
+              child: Text("Go to Next Page"),
             ),
           ],
         );
@@ -61,10 +86,7 @@ class alart_dialog extends StatelessWidget {
           IconButton(
             onPressed: () {
               MySnackBar("this is next page loading", context);
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const alart_dialog()),
-              );
+              NextPageAlartDialog(context);
             },
             icon: Icon(Icons.next_plan),
           ),
