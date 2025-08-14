@@ -1,3 +1,4 @@
+import 'package:first_app/screens/tabBar.dart';
 import 'package:flutter/material.dart';
 import 'package:first_app/screens/appbar.dart';
 
@@ -15,7 +16,7 @@ class MyFirstApp extends StatelessWidget {
       theme: ThemeData(primaryColor: Colors.blue),
       darkTheme: ThemeData(primaryColor: Colors.black),
       color: Colors.cyanAccent,
-      home: const appbar(),
+      home: const tabBar(),
       debugShowCheckedModeBanner: false,
     );
   }
