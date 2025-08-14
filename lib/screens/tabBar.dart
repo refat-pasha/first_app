@@ -1,0 +1,93 @@
+import 'package:first_app/screens/alert_dialog.dart';
+import 'package:first_app/screens/appbar.dart';
+import 'package:first_app/screens/body_row_column.dart';
+import 'package:first_app/screens/bottom_nav_bar.dart';
+import 'package:first_app/screens/buttons.dart';
+import 'package:first_app/screens/dynamic_ListView.dart';
+import 'package:first_app/screens/dynamic_GridView.dart';
+import 'package:first_app/screens/floating_action_button.dart';
+import 'package:first_app/screens/navigation_drawer.dart';
+import 'package:first_app/screens/navigation_end_drawer.dart';
+import 'package:first_app/screens/simple_form.dart';
+import 'package:flutter/material.dart';
+
+class tabBar extends StatelessWidget {
+  const tabBar({super.key});
+  void mySnackBar(String message, BuildContext context) {
+    ScaffoldMessenger.of(
+      context,
+    ).showSnackBar(SnackBar(content: Text(message)));
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return DefaultTabController(
+      length: 11,
+      child: Scaffold(
+        appBar: AppBar(
+          title: const Text("things to learn (Tab Bar)"),
+          titleSpacing: 10,
+          centerTitle: false,
+          toolbarHeight: 60,
+          toolbarOpacity: 1,
+          elevation: 0,
+          backgroundColor: Colors.green,
+          actions: [
+            IconButton(
+              onPressed: () {
+                mySnackBar("going to previous page", context);
+                // If intent is to go back, prefer Navigator.pop(context);
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const GridViewPage()),
+                );
+              },
+              icon: const Icon(Icons.arrow_back_ios_new_outlined),
+            ),
+            IconButton(
+              onPressed: () {
+                mySnackBar("this is next page loading", context);
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const GridViewPage()),
+                );
+              },
+              icon: const Icon(Icons.next_plan),
+            ),
+          ],
+          bottom: TabBar(
+            isScrollable: true,
+            tabs: [
+              Tab(icon: Icon(Icons.menu_open)), // appbar() substitute
+              Tab(icon: Icon(Icons.add_circle)), // floatingActionB()
+              Tab(icon: Icon(Icons.space_bar)), // bottom_nav_bar() substitute
+              Tab(icon: Icon(Icons.menu)), // navigation_drawer()
+              Tab(icon: Icon(Icons.menu_open)), // navigation_end_drawer()
+              Tab(icon: Icon(Icons.view_week)), // body_row()
+              Tab(icon: Icon(Icons.radio_button_checked)), // buttons()
+              Tab(icon: Icon(Icons.warning_amber)), // alart_dialog()
+              Tab(icon: Icon(Icons.description)), // simple_form()
+              Tab(icon: Icon(Icons.view_list)), // ListViewPage()
+              Tab(icon: Icon(Icons.grid_view)), // GridViewPage()
+            ],
+          ),
+        ),
+        body: TabBarView(
+          children: [
+            appbar(),
+            floatingActionB(),
+            bottom_nav_bar(),
+            navigation_drawer(),
+            navigation_end_drawer(),
+            body_row(),
+            buttons(),
+            alart_dialog(),
+            simple_form(),
+            ListViewPage(),
+            GridViewPage(),
+          ],
+        ),
+      ),
+    );
+  }
+}
