@@ -68,11 +68,11 @@ class floatingActionB extends StatelessWidget {
       ),
       floatingActionButton: FloatingActionButton(
         elevation: 10,
-        child: Icon(Icons.add),
         backgroundColor: Colors.blue,
         onPressed: () {
           MySnackBar("Floating Action Button Pressed", context);
         },
+        child: Icon(Icons.add),
       ),
       body: Container(
         margin: EdgeInsets.all(20),

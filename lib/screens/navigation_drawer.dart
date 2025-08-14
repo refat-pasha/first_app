@@ -70,11 +70,11 @@ class navigation_drawer extends StatelessWidget {
       ),
       floatingActionButton: FloatingActionButton(
         elevation: 10,
-        child: Icon(Icons.add),
         backgroundColor: Colors.indigo,
         onPressed: () {
           MySnackBar("Floating Action Button Pressed", context);
         },
+        child: Icon(Icons.add),
       ),
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: Colors.indigo,
@@ -96,7 +96,6 @@ class navigation_drawer extends StatelessWidget {
           BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
         ],
         onTap: (int index) {
-          ;
           if (index == 0) {
             MySnackBar("Home tapped", context);
           } else if (index == 1) {

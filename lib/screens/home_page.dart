@@ -113,7 +113,9 @@ class _GamePageState extends State<GamePage> with TickerProviderStateMixin {
     _score = 0;
     _timeLeft = _gameDuration;
     // dispose existing markers
-    for (var m in _markers) m.controller.dispose();
+    for (var m in _markers) {
+      m.controller.dispose();
+    }
     _markers.clear();
     _moveTarget();
 

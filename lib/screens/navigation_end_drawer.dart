@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'navigation_drawer.dart';
+import 'body_row_column.dart';
 
 void main(List<String> args) {}
 
@@ -58,6 +59,10 @@ class navigation_end_drawer extends StatelessWidget {
           IconButton(
             onPressed: () {
               MySnackBar("this is next page loading", context);
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const body_row()),
+              );
             },
             icon: Icon(Icons.next_plan),
           ),
@@ -65,11 +70,11 @@ class navigation_end_drawer extends StatelessWidget {
       ),
       floatingActionButton: FloatingActionButton(
         elevation: 10,
-        child: Icon(Icons.add),
         backgroundColor: Colors.indigo,
         onPressed: () {
           MySnackBar("Floating Action Button Pressed", context);
         },
+        child: Icon(Icons.add),
       ),
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: Colors.indigo,
@@ -91,7 +96,6 @@ class navigation_end_drawer extends StatelessWidget {
           BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
         ],
         onTap: (int index) {
-          ;
           if (index == 0) {
             MySnackBar("Home tapped", context);
           } else if (index == 1) {
