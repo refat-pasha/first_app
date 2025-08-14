@@ -3,6 +3,7 @@ import 'package:first_app/screens/appbar.dart';
 import 'package:first_app/screens/body_row_column.dart';
 import 'package:first_app/screens/bottom_nav_bar.dart';
 import 'package:first_app/screens/buttons.dart';
+import 'package:first_app/screens/card.dart';
 import 'package:first_app/screens/dynamic_ListView.dart';
 import 'package:first_app/screens/dynamic_GridView.dart';
 import 'package:first_app/screens/floating_action_button.dart';
@@ -22,7 +23,7 @@ class tabBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: 11,
+      length: 12,
       child: Scaffold(
         appBar: AppBar(
           title: const Text("things to learn (Tab Bar)"),
@@ -46,13 +47,9 @@ class tabBar extends StatelessWidget {
             ),
             IconButton(
               onPressed: () {
-                mySnackBar("this is next page loading", context);
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const GridViewPage()),
-                );
+                mySnackBar("there is no page further", context);
               },
-              icon: const Icon(Icons.next_plan),
+              icon: const Icon(Icons.back_hand_outlined),
             ),
           ],
           bottom: TabBar(
@@ -96,6 +93,10 @@ class tabBar extends StatelessWidget {
                 icon: Icon(Icons.grid_view),
                 text: "GridViewPage",
               ), // GridViewPage()
+              Tab(
+                icon: Icon(Icons.card_travel_sharp),
+                text: "cardssss",
+              ), // GridViewPage()
             ],
           ),
         ),
@@ -112,6 +113,7 @@ class tabBar extends StatelessWidget {
             simple_form(),
             ListViewPage(),
             GridViewPage(),
+            cardss(),
           ],
         ),
       ),
