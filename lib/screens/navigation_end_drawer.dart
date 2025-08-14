@@ -54,7 +54,7 @@ class navigation_end_drawer extends StatelessWidget {
                 ),
               );
             },
-            icon: Icon(Icons.back_hand),
+            icon: Icon(Icons.arrow_back_ios_new_outlined),
           ),
           IconButton(
             onPressed: () {

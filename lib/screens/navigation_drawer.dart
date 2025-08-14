@@ -52,7 +52,7 @@ class navigation_drawer extends StatelessWidget {
                 MaterialPageRoute(builder: (context) => const bottom_nav_bar()),
               );
             },
-            icon: Icon(Icons.back_hand),
+            icon: Icon(Icons.arrow_back_ios_new_outlined),
           ),
           IconButton(
             onPressed: () {

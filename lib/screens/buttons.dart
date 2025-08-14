@@ -78,7 +78,7 @@ class buttons extends StatelessWidget {
                 MaterialPageRoute(builder: (context) => const body_row()),
               );
             },
-            icon: Icon(Icons.back_hand),
+            icon: Icon(Icons.arrow_back_ios_new_outlined),
           ),
           IconButton(
             onPressed: () {
