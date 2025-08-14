@@ -49,9 +49,12 @@ dev_dependencies:
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 flutter:
-  # assets:
-  #   - assets/bg_pattern.png
-  #   - assets/logo.png
+  assets:
+    - assets/images/luffy.png
+    - assets/images/luffy2.png
+    - assets/images/luffy3.png
+    - assets/images/dragon.png
+   # - assets/logo.png
 
 
 # The following section is specific to Flutter packages.
