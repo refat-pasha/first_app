@@ -1,4 +1,5 @@
 import 'package:first_app/screens/alert_dialog.dart';
+import 'package:first_app/screens/dynamic_ListView.dart';
 import 'package:flutter/material.dart';
 
 class simple_form extends StatelessWidget {
@@ -11,6 +12,18 @@ class simple_form extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    ButtonStyle buttonStyle = ElevatedButton.styleFrom(
+      minimumSize: Size(
+        double.infinity,
+        60,
+      ), // Set the width to fill the parent
+      backgroundColor: Colors.blue,
+      foregroundColor: Colors.white, // Set the background color
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(10), // Rounded corners
+      ),
+    );
+
     return Scaffold(
       appBar: AppBar(
         title: Text("things to learn(simple form)"),
@@ -36,10 +49,52 @@ class simple_form extends StatelessWidget {
               MySnackBar("this is next page loading", context);
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const alart_dialog()),
+                MaterialPageRoute(builder: (context) => ListViewPage()),
               );
             },
             icon: Icon(Icons.next_plan),
+          ),
+        ],
+      ),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: TextField(
+              decoration: InputDecoration(
+                border: OutlineInputBorder(),
+                labelText: "First Name",
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: TextField(
+              decoration: InputDecoration(
+                border: OutlineInputBorder(),
+                labelText: "Last Name",
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: TextField(
+              decoration: InputDecoration(
+                border: OutlineInputBorder(),
+                labelText: "Email Name",
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: ElevatedButton(
+              onPressed: () {
+                MySnackBar("submit button pressed", context);
+              },
+              child: Text("submit"),
+              style: buttonStyle,
+            ),
           ),
         ],
       ),
