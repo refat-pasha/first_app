@@ -15,6 +15,32 @@ class buttons extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    ButtonStyle textbuttonStyle = TextButton.styleFrom(
+      backgroundColor: Colors.deepPurpleAccent, // Background color
+      foregroundColor: Colors.blue, // Text color
+      padding: EdgeInsets.all(10), // Padding around the button
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(10), // Rounded corners
+      ),
+    );
+    ButtonStyle elevatedbuttonStyle = ElevatedButton.styleFrom(
+      shadowColor: Colors.black,
+      backgroundColor: Colors.blue, // Background color
+      foregroundColor: Colors.white, // Text color
+      padding: EdgeInsets.all(10), // Padding around the button
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(10), // Rounded corners
+      ),
+    );
+    ButtonStyle outlineButtonStyle = OutlinedButton.styleFrom(
+      backgroundColor: Colors.white, // Background color
+      foregroundColor: Colors.blue, // Text color
+      padding: EdgeInsets.all(10), // Padding around the button
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(10), // Rounded corners
+      ),
+    );
+
     return Scaffold(
       appBar: AppBar(
         title: Text("Things to learn(buttons)"),
@@ -299,22 +325,28 @@ class buttons extends StatelessWidget {
               children: [
                 TextButton(
                   onPressed: () {
-                    MySnackBar("im text button in column", context);
+                    MySnackBar("im text button in row", context);
                   },
                   child: Text("text button"),
+                  style: textbuttonStyle,
                 ),
+                SizedBox(width: 20),
                 ElevatedButton(
                   onPressed: () {
-                    MySnackBar("im elevated button in column", context);
+                    MySnackBar("im elevated button in row", context);
                   },
                   child: Text("elevated button"),
+                  style: elevatedbuttonStyle,
                 ),
+                SizedBox(width: 20),
                 OutlinedButton(
                   onPressed: () {
-                    MySnackBar("im outline button in column", context);
+                    MySnackBar("im outline button in row", context);
                   },
                   child: Text("outline button"),
+                  style: outlineButtonStyle,
                 ),
+                SizedBox(width: 20),
               ],
             ),
           ],
