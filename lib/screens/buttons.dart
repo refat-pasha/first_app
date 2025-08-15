@@ -255,6 +255,35 @@ class buttons extends StatelessWidget {
               ),
             ),
             SizedBox(height: 20),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                TextButton(
+                  onPressed: () {
+                    MySnackBar("im text button in row", context);
+                  },
+                  child: Text("text button"),
+                  style: textbuttonStyle,
+                ),
+                SizedBox(width: 20),
+                ElevatedButton(
+                  onPressed: () {
+                    MySnackBar("im elevated button in row", context);
+                  },
+                  child: Text("elevated button"),
+                  style: elevatedbuttonStyle,
+                ),
+                SizedBox(width: 20),
+                OutlinedButton(
+                  onPressed: () {
+                    MySnackBar("im outline button in row", context);
+                  },
+                  child: Text("outline button"),
+                  style: outlineButtonStyle,
+                ),
+                SizedBox(width: 20),
+              ],
+            ),
 
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -318,34 +347,6 @@ class buttons extends StatelessWidget {
                       width: 100,
                     ),
                   ],
-                ),
-                SizedBox(width: 20),
-              ],
-            ),
-            Row(
-              children: [
-                TextButton(
-                  onPressed: () {
-                    MySnackBar("im text button in row", context);
-                  },
-                  child: Text("text button"),
-                  style: textbuttonStyle,
-                ),
-                SizedBox(width: 20),
-                ElevatedButton(
-                  onPressed: () {
-                    MySnackBar("im elevated button in row", context);
-                  },
-                  child: Text("elevated button"),
-                  style: elevatedbuttonStyle,
-                ),
-                SizedBox(width: 20),
-                OutlinedButton(
-                  onPressed: () {
-                    MySnackBar("im outline button in row", context);
-                  },
-                  child: Text("outline button"),
-                  style: outlineButtonStyle,
                 ),
                 SizedBox(width: 20),
               ],

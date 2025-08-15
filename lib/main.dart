@@ -1,6 +1,6 @@
 import 'package:first_app/screens/tabBar.dart';
 import 'package:flutter/material.dart';
-
+import 'package:first_app/screens/splash_screen.dart';
 
 void main() {
   runApp(const MyFirstApp());
@@ -16,7 +16,7 @@ class MyFirstApp extends StatelessWidget {
       theme: ThemeData(primaryColor: Colors.blue),
       darkTheme: ThemeData(primaryColor: Colors.black),
       color: Colors.cyanAccent,
-      home: const tabBar(),
+      home: const SplashScreen(),
       debugShowCheckedModeBanner: false,
     );
   }
