@@ -1,3 +1,4 @@
+import 'package:first_app/screens/dynamic_GridView.dart';
 import 'package:first_app/screens/tabBar.dart';
 import 'package:flutter/material.dart';
 
@@ -13,7 +14,7 @@ class cardss extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("things to learn (Tab Bar)"),
+        title: const Text("things to learn (Card)"),
         titleSpacing: 10,
         centerTitle: false,
         toolbarHeight: 60,
@@ -27,7 +28,7 @@ class cardss extends StatelessWidget {
               // If intent is to go back, prefer Navigator.pop(context);
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const tabBar()),
+                MaterialPageRoute(builder: (context) => const GridViewPage()),
               );
             },
             icon: const Icon(Icons.arrow_back_ios_new_outlined),
@@ -37,7 +38,7 @@ class cardss extends StatelessWidget {
               mySnackBar("this is next page loading", context);
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const cardss()),
+                MaterialPageRoute(builder: (context) => const tabBar()),
               );
             },
             icon: const Icon(Icons.next_plan),
